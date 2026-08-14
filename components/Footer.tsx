@@ -22,7 +22,14 @@ export default function Footer() {
       <div className="mx-auto max-w-6xl px-6 py-10">
         <div className="flex flex-col gap-8 md:flex-row md:items-start md:justify-between">
           <div>
-            <Image src="/images/brand/wordmark.png" alt={t("nav.brand")} width={900} height={170} className="h-7 w-auto" />
+            <Image
+              src="/images/brand/wordmark.png"
+              alt={t("nav.brand")}
+              width={480}
+              height={91}
+              sizes="150px"
+              style={{ height: "1.75rem", width: "auto" }}
+            />
             <p className="mt-2 text-sm text-muted">{t("footer.tagline")}</p>
             <p className="mt-1 text-xs font-semibold uppercase tracking-wide text-brand">{t("brand.tagline")}</p>
           </div>

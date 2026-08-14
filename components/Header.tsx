@@ -25,8 +25,16 @@ export default function Header() {
   return (
     <header className="border-b border-slate-100 bg-white/80 backdrop-blur">
       <div className="mx-auto flex max-w-6xl items-center justify-between gap-4 px-6 py-4">
-        <Link href="/" className="flex items-center" aria-label={t("nav.brand")}>
-          <Image src="/images/brand/wordmark.png" alt={t("nav.brand")} width={900} height={170} priority className="h-8 w-auto" />
+        <Link href="/" className="flex shrink-0 items-center" aria-label={t("nav.brand")}>
+          <Image
+            src="/images/brand/wordmark.png"
+            alt={t("nav.brand")}
+            width={480}
+            height={91}
+            priority
+            sizes="170px"
+            style={{ height: "2rem", width: "auto" }}
+          />
         </Link>
 
         <nav className="hidden items-center gap-6 md:flex">
