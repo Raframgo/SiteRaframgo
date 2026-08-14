@@ -4,13 +4,18 @@
   color-scheme: light;
   --background: #ffffff;
   --foreground: #0f172a;
-  /* Identidad visual de RaframGo (marca corporativa): índigo, distinto del
-     verde propio de aMerkar (ver spec, sección 4-5 — "la identidad de
-     RaframGo debe diferenciarse visualmente de la identidad particular de
-     cada producto"). Cada producto conserva su propio accentColor (ver
+  /* Identidad visual de RaframGo (marca corporativa): paleta oficial de la
+     guía de marca (naranja/rosa/navy/morado/azul), distinta del verde
+     propio de aMerkar (ver spec, sección 4-5 — "la identidad de RaframGo
+     debe diferenciarse visualmente de la identidad particular de cada
+     producto"). Cada producto conserva su propio accentColor (ver
      lib/products/data.ts). */
-  --brand: #4f46e5;
-  --brand-hover: #4338ca;
+  --brand: #ff7a00;
+  --brand-hover: #d16400;
+  --brand-navy: #07142a;
+  --brand-pink: #ff2d7a;
+  --brand-purple: #8b2dff;
+  --brand-blue: #0066ff;
   --muted: #64748b;
 }
 
@@ -19,6 +24,10 @@
   --color-foreground: var(--foreground);
   --color-brand: var(--brand);
   --color-brand-hover: var(--brand-hover);
+  --color-brand-navy: var(--brand-navy);
+  --color-brand-pink: var(--brand-pink);
+  --color-brand-purple: var(--brand-purple);
+  --color-brand-blue: var(--brand-blue);
   --color-muted: var(--muted);
   --font-sans: var(--font-inter);
 }
