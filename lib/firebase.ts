@@ -1,12 +1,15 @@
 import { getApps, initializeApp, type FirebaseApp } from "firebase/app";
+import { getAuth, type Auth } from "firebase/auth";
 import { getFirestore, type Firestore } from "firebase/firestore";
 
-// El portal reutiliza el mismo proyecto Firebase de aMerkar, pero solo para
-// LEER, sin sesión, las colecciones que ya son públicas por diseño en
-// firestore.rules: communityStats/summary y publicReviews/{id} (ver
-// lib/community.service.ts). El portal nunca importa "firebase/auth": no
-// tiene login (ver spec, sección 3 — "El portal NO debe tener autenticación
-// de usuarios").
+// El portal reutiliza el mismo proyecto Firebase de aMerkar. Para el
+// público en general solo LEE, sin sesión, las colecciones que ya son
+// públicas por diseño en firestore.rules: communityStats/summary,
+// publicReviews/{id}, portalProducts/{id} y communityCountryStats/{código}
+// (ver lib/community/service.ts). El portal SIGUE sin login para
+// visitantes (ver spec, sección 3) — el único uso de "firebase/auth" aquí
+// es para /admin, con el mismo rol admins/{uid} que ya usa aMerkar (ver
+// features/admin).
 const firebaseConfig = {
   apiKey: process.env.NEXT_PUBLIC_FIREBASE_API_KEY,
   authDomain: process.env.NEXT_PUBLIC_FIREBASE_AUTH_DOMAIN,
@@ -30,4 +33,8 @@ function getFirebaseApp(): FirebaseApp {
 
 export function getFirebaseFirestore(): Firestore {
   return getFirestore(getFirebaseApp());
+}
+
+export function getFirebaseAuth(): Auth {
+  return getAuth(getFirebaseApp());
 }

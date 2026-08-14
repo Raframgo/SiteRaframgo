@@ -2,11 +2,11 @@
 
 import ProductCard from "@/components/ProductCard";
 import { useT } from "@/features/i18n/I18nProvider";
-import { getAvailableProducts } from "@/lib/products/data";
+import { useProducts } from "@/features/products/useProducts";
 
 export default function ProductsListView() {
   const t = useT();
-  const products = getAvailableProducts();
+  const products = useProducts();
 
   return (
     <div className="mx-auto max-w-6xl px-6 py-16">

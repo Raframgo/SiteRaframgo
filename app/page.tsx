@@ -4,11 +4,11 @@ import Link from "next/link";
 import CommunityStatsPreview from "@/components/CommunityStatsPreview";
 import ProductCard from "@/components/ProductCard";
 import { useT } from "@/features/i18n/I18nProvider";
-import { getAvailableProducts } from "@/lib/products/data";
+import { useProducts } from "@/features/products/useProducts";
 
 export default function HomePage() {
   const t = useT();
-  const products = getAvailableProducts();
+  const products = useProducts();
 
   return (
     <div>

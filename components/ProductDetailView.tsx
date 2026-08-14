@@ -2,7 +2,8 @@
 
 import Link from "next/link";
 import { useT } from "@/features/i18n/I18nProvider";
-import type { Product } from "@/lib/products/types";
+import { useProduct } from "@/features/products/useProducts";
+import type { Product as ProductType } from "@/lib/products/types";
 import ProductStatusBadge from "./ProductStatusBadge";
 
 /**
@@ -10,8 +11,9 @@ import ProductStatusBadge from "./ProductStatusBadge";
  * Genérico: no tiene ninguna referencia especial a aMerkar, así que sirve
  * igual para cualquier producto futuro con la misma estructura de datos.
  */
-export default function ProductDetailView({ product }: { product: Product }) {
+export default function ProductDetailView({ product: staticProduct }: { product: ProductType }) {
   const t = useT();
+  const product = useProduct(staticProduct);
   const name = t(`products.${product.id}.name`);
 
   return (

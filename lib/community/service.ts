@@ -1,6 +1,6 @@
 import { collection, doc, getDoc, getDocs, limit, orderBy, query } from "firebase/firestore";
 import { getFirebaseFirestore } from "@/lib/firebase";
-import type { CommunityStats, PublicReview } from "./types";
+import type { CommunityStats, CountryStat, PublicReview } from "./types";
 
 function mapStats(data: Record<string, unknown> | undefined): CommunityStats | null {
   if (!data) return null;
@@ -54,6 +54,24 @@ export async function getApprovedReviews(max = 12): Promise<PublicReview[]> {
     const reviewsQuery = query(collection(getFirebaseFirestore(), "publicReviews"), orderBy("approxDate", "desc"), limit(max));
     const snapshot = await getDocs(reviewsQuery);
     return snapshot.docs.map((item) => mapReview(item.data()));
+  } catch {
+    return [];
+  }
+}
+
+/**
+ * Presencia por país (communityCountryStats/{código ISO-2}, ver
+ * lib/community/types.ts). Ordenado de mayor a menor cantidad de usuarios;
+ * lista vacía si todavía no hay datos (registros previos a este cambio en
+ * aMerkar) o si Firebase no responde.
+ */
+export async function getCountryStats(): Promise<CountryStat[]> {
+  try {
+    const snapshot = await getDocs(collection(getFirebaseFirestore(), "communityCountryStats"));
+    return snapshot.docs
+      .map((item) => ({ countryCode: item.id, userCount: (item.data().userCount as number | undefined) ?? 0 }))
+      .filter((entry) => entry.userCount > 0)
+      .sort((a, b) => b.userCount - a.userCount);
   } catch {
     return [];
   }

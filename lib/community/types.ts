@@ -38,3 +38,14 @@ export function averageScore(stats: CommunityStats): number {
   if (stats.totalRatings <= 0) return 0;
   return stats.scoreSum / stats.totalRatings;
 }
+
+/**
+ * Documento público communityCountryStats/{código ISO-2} (ver
+ * community-stats.service.ts -> recordUserCountry en el repo de aMerkar).
+ * Contador agregado por país, nunca un listado de usuarios: no identifica a
+ * nadie individualmente.
+ */
+export type CountryStat = {
+  countryCode: string;
+  userCount: number;
+};
