@@ -30,9 +30,9 @@ export default function Header() {
             src="/images/brand/wordmark.png"
             alt={t("nav.brand")}
             width={480}
-            height={91}
+            height={151}
             priority
-            sizes="170px"
+            sizes="120px"
             style={{ height: "2rem", width: "auto" }}
           />
         </Link>

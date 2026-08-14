@@ -26,8 +26,8 @@ export default function Footer() {
               src="/images/brand/wordmark.png"
               alt={t("nav.brand")}
               width={480}
-              height={91}
-              sizes="150px"
+              height={151}
+              sizes="110px"
               style={{ height: "1.75rem", width: "auto" }}
             />
             <p className="mt-2 text-sm text-muted">{t("footer.tagline")}</p>
