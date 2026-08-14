@@ -1,6 +1,8 @@
 "use client";
 
 import Link from "next/link";
+import BrandPillars from "@/components/BrandPillars";
+import BrandWave from "@/components/BrandWave";
 import CommunityStatsPreview from "@/components/CommunityStatsPreview";
 import ProductCard from "@/components/ProductCard";
 import { useT } from "@/features/i18n/I18nProvider";
@@ -10,24 +12,42 @@ export default function HomePage() {
   const t = useT();
   const products = useProducts();
 
+  const title = t("home.hero.title");
+  const titleWords = title.split(" ");
+  const titleLead = titleWords.slice(0, -1).join(" ");
+  const titleAccent = titleWords.at(-1);
+
   return (
     <div>
-      <section className="mx-auto max-w-6xl px-6 py-20 text-center sm:py-28">
-        <p className="text-sm font-semibold uppercase tracking-widest text-brand">{t("home.hero.eyebrow")}</p>
-        <h1 className="mx-auto mt-4 max-w-3xl text-4xl font-bold tracking-tight text-slate-900 sm:text-5xl">
-          {t("home.hero.title")}
-        </h1>
-        <p className="mx-auto mt-5 max-w-2xl text-lg text-muted">{t("home.hero.description")}</p>
-        <div className="mt-8 flex flex-wrap items-center justify-center gap-3">
-          <Link href="/productos" className="rounded-xl bg-brand px-6 py-3 text-sm font-semibold text-white hover:bg-brand-hover">
-            {t("home.hero.ctaProducts")}
-          </Link>
-          <Link
-            href="/sobre-raframgo"
-            className="rounded-xl border border-slate-300 px-6 py-3 text-sm font-semibold text-slate-700 hover:bg-slate-50"
-          >
-            {t("home.hero.ctaAbout")}
-          </Link>
+      <section className="relative overflow-hidden">
+        <div className="mx-auto grid max-w-6xl items-center gap-10 px-6 py-20 sm:py-28 lg:grid-cols-2 lg:gap-16">
+          <div className="text-center lg:text-left">
+            <p className="text-sm font-semibold uppercase tracking-widest text-brand">{t("home.hero.eyebrow")}</p>
+            <h1 className="mx-auto mt-4 max-w-xl text-4xl font-bold tracking-tight text-slate-900 sm:text-5xl lg:mx-0">
+              {titleLead}{" "}
+              <span className="bg-gradient-to-r from-brand via-brand-pink to-brand-purple bg-clip-text text-transparent">
+                {titleAccent}
+              </span>
+            </h1>
+            <p className="mx-auto mt-5 max-w-2xl text-lg text-muted lg:mx-0">{t("home.hero.description")}</p>
+            <div className="mt-8 flex flex-wrap items-center justify-center gap-3 lg:justify-start">
+              <Link href="/productos" className="rounded-xl bg-brand px-6 py-3 text-sm font-semibold text-white hover:bg-brand-hover">
+                {t("home.hero.ctaProducts")}
+              </Link>
+              <Link
+                href="/sobre-raframgo"
+                className="rounded-xl border border-slate-300 px-6 py-3 text-sm font-semibold text-slate-700 hover:bg-slate-50"
+              >
+                {t("home.hero.ctaAbout")}
+              </Link>
+            </div>
+          </div>
+
+          <BrandWave className="hidden h-auto w-full max-w-xl justify-self-center lg:block" />
+        </div>
+
+        <div className="mx-auto max-w-6xl px-6">
+          <BrandPillars />
         </div>
       </section>
 
