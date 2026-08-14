@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import Link from "next/link";
 import { useT } from "@/features/i18n/I18nProvider";
 
@@ -21,8 +22,9 @@ export default function Footer() {
       <div className="mx-auto max-w-6xl px-6 py-10">
         <div className="flex flex-col gap-8 md:flex-row md:items-start md:justify-between">
           <div>
-            <p className="text-lg font-bold text-slate-900">{t("nav.brand")}</p>
-            <p className="mt-1 text-sm text-muted">{t("footer.tagline")}</p>
+            <Image src="/images/brand/wordmark.png" alt={t("nav.brand")} width={900} height={170} className="h-7 w-auto" />
+            <p className="mt-2 text-sm text-muted">{t("footer.tagline")}</p>
+            <p className="mt-1 text-xs font-semibold uppercase tracking-wide text-brand">{t("brand.tagline")}</p>
           </div>
 
           <nav aria-label={t("footer.linksHeading")}>

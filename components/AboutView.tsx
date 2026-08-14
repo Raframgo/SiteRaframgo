@@ -7,7 +7,8 @@ export default function AboutView() {
 
   return (
     <div className="mx-auto max-w-3xl px-6 py-16">
-      <h1 className="text-3xl font-bold text-slate-900">{t("about.heading")}</h1>
+      <p className="text-xs font-semibold uppercase tracking-wide text-brand">{t("brand.tagline")}</p>
+      <h1 className="mt-2 text-3xl font-bold text-slate-900">{t("about.heading")}</h1>
       <p className="mt-4 text-lg text-slate-700">{t("about.intro")}</p>
 
       <section className="mt-10">

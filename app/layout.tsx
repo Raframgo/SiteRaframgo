@@ -34,7 +34,12 @@ export const metadata: Metadata = {
     description: dictionary["meta.home.description"],
   },
   icons: {
-    icon: "/favicon.svg",
+    icon: [
+      { url: "/images/brand/icon-32.png", sizes: "32x32", type: "image/png" },
+      { url: "/images/brand/icon-192.png", sizes: "192x192", type: "image/png" },
+      { url: "/images/brand/icon-512.png", sizes: "512x512", type: "image/png" },
+    ],
+    apple: "/images/brand/icon-180.png",
   },
 };
 
