@@ -27,8 +27,8 @@ export default function Footer() {
               alt={t("nav.brand")}
               width={480}
               height={151}
-              sizes="110px"
-              style={{ height: "1.75rem", width: "auto" }}
+              sizes="150px"
+              style={{ height: "2.5rem", width: "auto" }}
             />
             <p className="mt-2 text-sm text-muted">{t("footer.tagline")}</p>
             <p className="mt-1 text-xs font-semibold uppercase tracking-wide text-brand">{t("brand.tagline")}</p>

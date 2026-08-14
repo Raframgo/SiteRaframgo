@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import Link from "next/link";
 import BrandPillars from "@/components/BrandPillars";
 import BrandWave from "@/components/BrandWave";
@@ -22,7 +23,15 @@ export default function HomePage() {
       <section className="relative overflow-hidden">
         <div className="mx-auto grid max-w-6xl items-center gap-10 px-6 py-20 sm:py-28 lg:grid-cols-2 lg:gap-16">
           <div className="text-center lg:text-left">
-            <p className="text-sm font-semibold uppercase tracking-widest text-brand">{t("home.hero.eyebrow")}</p>
+            <Image
+              src="/images/brand/wordmark.png"
+              alt={t("nav.brand")}
+              width={480}
+              height={151}
+              sizes="260px"
+              className="mx-auto lg:mx-0"
+              style={{ height: "3rem", width: "auto" }}
+            />
             <h1 className="mx-auto mt-4 max-w-xl text-4xl font-bold tracking-tight text-slate-900 sm:text-5xl lg:mx-0">
               {titleLead}{" "}
               <span className="bg-gradient-to-r from-brand via-brand-pink to-brand-purple bg-clip-text text-transparent">
@@ -65,7 +74,17 @@ export default function HomePage() {
 
       <section className="py-16">
         <div className="mx-auto max-w-6xl px-6 text-center">
-          <h2 className="text-2xl font-bold text-slate-900">{t("home.community.heading")}</h2>
+          <h2 className="flex flex-wrap items-center justify-center gap-2 text-2xl font-bold text-slate-900">
+            {t("home.community.heading")}
+            <Image
+              src="/images/brand/wordmark.png"
+              alt={t("nav.brand")}
+              width={480}
+              height={151}
+              sizes="150px"
+              style={{ height: "1.75rem", width: "auto" }}
+            />
+          </h2>
           <p className="mx-auto mt-2 max-w-2xl text-muted">{t("home.community.subheading")}</p>
           <div className="mt-8">
             <CommunityStatsPreview />

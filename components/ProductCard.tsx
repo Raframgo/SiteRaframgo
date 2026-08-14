@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import Link from "next/link";
 import { useT } from "@/features/i18n/I18nProvider";
 import type { Product } from "@/lib/products/types";
@@ -17,14 +18,25 @@ export default function ProductCard({ product }: { product: Product }) {
   return (
     <div className="flex flex-col rounded-3xl border border-slate-200 bg-white p-6 shadow-sm transition hover:shadow-md">
       <div className="flex items-start justify-between gap-3">
-        <span className="flex h-14 w-14 items-center justify-center rounded-2xl text-3xl" style={{ backgroundColor: `${product.accentColor}1a` }} aria-hidden>
-          {product.icon}
-        </span>
+        {product.logo ? (
+          <Image
+            src={product.logo}
+            alt={name}
+            width={480}
+            height={151}
+            sizes="220px"
+            style={{ height: "3.5rem", width: "auto" }}
+          />
+        ) : (
+          <span className="flex h-14 w-14 items-center justify-center rounded-2xl text-3xl" style={{ backgroundColor: `${product.accentColor}1a` }} aria-hidden>
+            {product.icon}
+          </span>
+        )}
         <ProductStatusBadge status={product.status} />
       </div>
 
-      <h3 className="mt-4 text-xl font-bold text-slate-900">{name}</h3>
-      <p className="text-sm font-medium" style={{ color: product.accentColor }}>
+      <h3 className={product.logo ? "sr-only" : "mt-4 text-xl font-bold text-slate-900"}>{name}</h3>
+      <p className="mt-4 text-sm font-medium" style={{ color: product.accentColor }}>
         {t(`products.${product.id}.tagline`)}
       </p>
       <p className="mt-3 flex-1 text-sm text-muted">{t(`products.${product.id}.shortDescription`)}</p>

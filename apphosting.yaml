@@ -1,0 +1,80 @@
+# Configuración de Firebase App Hosting para SiteRaframGo.
+# Referencia: https://firebase.google.com/docs/app-hosting/configure
+#
+# Este repo es un único paquete Next.js (no monorepo/Nx), así que App
+# Hosting detecta automáticamente el build/run command estándar
+# (`next build` -> `.next/standalone/server.js`). No hace falta declarar
+# `scripts.runCommand` a mano.
+
+runConfig:
+  # Sitio de bajo tráfico: con 1 instancia máxima alcanza y evita costos
+  # inesperados por escalado. Subir maxInstances si el tráfico crece.
+  minInstances: 0
+  maxInstances: 1
+  concurrency: 80
+  cpu: 1
+  memoryMiB: 512
+
+# Variables NEXT_PUBLIC_* — no son secretas (son identificadores públicos
+# del proyecto Firebase de aMerkar, la seguridad real está en
+# firestore.rules; ver comentario en lib/firebase.ts y .env.local).
+# availability: BUILD también, porque Next.js las inyecta en el bundle del
+# cliente en tiempo de build, no solo en runtime.
+env:
+  - variable: NEXT_PUBLIC_FIREBASE_API_KEY
+    value: AIzaSyBZJ2B93QdlLzAqraXr1Aj6uNBQrp9wzGU
+    availability:
+      - BUILD
+      - RUNTIME
+
+  - variable: NEXT_PUBLIC_FIREBASE_AUTH_DOMAIN
+    value: amerkar-45d55.firebaseapp.com
+    availability:
+      - BUILD
+      - RUNTIME
+
+  - variable: NEXT_PUBLIC_FIREBASE_PROJECT_ID
+    value: amerkar-45d55
+    availability:
+      - BUILD
+      - RUNTIME
+
+  - variable: NEXT_PUBLIC_FIREBASE_STORAGE_BUCKET
+    value: amerkar-45d55.firebasestorage.app
+    availability:
+      - BUILD
+      - RUNTIME
+
+  - variable: NEXT_PUBLIC_FIREBASE_MESSAGING_SENDER_ID
+    value: "388840038380"
+    availability:
+      - BUILD
+      - RUNTIME
+
+  - variable: NEXT_PUBLIC_FIREBASE_APP_ID
+    value: "1:388840038380:web:2df756df5d57f0ceedaac9"
+    availability:
+      - BUILD
+      - RUNTIME
+
+  - variable: NEXT_PUBLIC_FIREBASE_MEASUREMENT_ID
+    value: G-4QVW62YXFN
+    availability:
+      - BUILD
+      - RUNTIME
+
+  # TODO: reemplazar por la URL real de producción de aMerkar antes de
+  # lanzar — hoy sigue apuntando a localhost (placeholder de desarrollo).
+  - variable: NEXT_PUBLIC_AMERKAR_APP_URL
+    value: http://localhost:3000
+    availability:
+      - BUILD
+      - RUNTIME
+
+  # TODO: confirmar el dominio final del portal (hoy es un placeholder en
+  # .env.local) antes de lanzar, para que metadata/OG/sitemap sean correctos.
+  - variable: NEXT_PUBLIC_SITE_URL
+    value: https://raframgo.com
+    availability:
+      - BUILD
+      - RUNTIME

@@ -13,6 +13,10 @@ const securityHeaders = [
 
 const nextConfig: NextConfig = {
   reactStrictMode: true,
+  // Requerido por Firebase App Hosting (Cloud Run): sin esto el build no
+  // genera .next/standalone y el despliegue falla en el arranque del
+  // contenedor con errores poco claros de puerto/timeout.
+  output: "standalone",
   async headers() {
     return [
       {

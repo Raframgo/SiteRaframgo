@@ -18,12 +18,16 @@ export const PRODUCTS: Product[] = [
     benefits: ["saveTime", "avoidForgetting", "familyCoordination", "everywhereAccess"],
     faqs: ["isFree", "ownAccount", "platforms", "dataSecurity"],
     icon: "🛒",
-    logo: null,
+    // Wordmark real v3 de aMerkar (paleta teal/navy vigente), copiado de
+    // apps/web/public/images/amerkar-wordmark-v3.png en el repo de aMerkar.
+    logo: "/images/products/amerkar-wordmark.png",
     screenshots: [],
     category: "hogar",
     status: "disponible",
     applicationUrl: process.env.NEXT_PUBLIC_AMERKAR_APP_URL ?? "https://amerkar.app",
-    accentColor: "#16A34A",
+    // Teal principal de la paleta v3 vigente de aMerkar (--brand-600 en
+    // apps/web/app/globals.css), reemplaza el verde de una guía anterior.
+    accentColor: "#0097A7",
     displayOrder: 1,
   },
 ];

@@ -32,8 +32,8 @@ export default function Header() {
             width={480}
             height={151}
             priority
-            sizes="120px"
-            style={{ height: "2rem", width: "auto" }}
+            sizes="170px"
+            style={{ height: "2.75rem", width: "auto" }}
           />
         </Link>
 

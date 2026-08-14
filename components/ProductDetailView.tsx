@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import Link from "next/link";
 import { useT } from "@/features/i18n/I18nProvider";
 import { useProduct } from "@/features/products/useProducts";
@@ -24,15 +25,26 @@ export default function ProductDetailView({ product: staticProduct }: { product:
 
       <div className="mt-6 flex flex-wrap items-start justify-between gap-4">
         <div className="flex items-center gap-4">
-          <span
-            className="flex h-16 w-16 items-center justify-center rounded-2xl text-4xl"
-            style={{ backgroundColor: `${product.accentColor}1a` }}
-            aria-hidden
-          >
-            {product.icon}
-          </span>
+          {product.logo ? (
+            <Image
+              src={product.logo}
+              alt={name}
+              width={480}
+              height={151}
+              sizes="280px"
+              style={{ height: "4.25rem", width: "auto" }}
+            />
+          ) : (
+            <span
+              className="flex h-16 w-16 items-center justify-center rounded-2xl text-4xl"
+              style={{ backgroundColor: `${product.accentColor}1a` }}
+              aria-hidden
+            >
+              {product.icon}
+            </span>
+          )}
           <div>
-            <h1 className="text-3xl font-bold text-slate-900">{name}</h1>
+            <h1 className={product.logo ? "sr-only" : "text-3xl font-bold text-slate-900"}>{name}</h1>
             <p className="font-medium" style={{ color: product.accentColor }}>
               {t(`products.${product.id}.tagline`)}
             </p>
