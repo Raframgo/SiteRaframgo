@@ -1,8 +1,8 @@
 /**
- * Espejo del lado del portal de los tipos públicos de aMerkar (ver
- * apps/web/lib/ratings/types.ts en el repo de aMerkar). Se duplican aquí a
+ * Espejo del lado del portal de los tipos públicos de Mercaue (ver
+ * apps/web/lib/ratings/types.ts en el repo de Mercaue). Se duplican aquí a
  * propósito: el portal es un proyecto independiente (ver spec, sección 19 —
- * "no mezclar la lógica de negocio de aMerkar con la lógica del portal
+ * "no mezclar la lógica de negocio de Mercaue con la lógica del portal
  * corporativo"), solo lee estas dos colecciones públicas de Firestore.
  */
 
@@ -41,7 +41,7 @@ export function averageScore(stats: CommunityStats): number {
 
 /**
  * Documento público communityCountryStats/{código ISO-2} (ver
- * community-stats.service.ts -> recordUserCountry en el repo de aMerkar).
+ * community-stats.service.ts -> recordUserCountry en el repo de Mercaue).
  * Contador agregado por país, nunca un listado de usuarios: no identifica a
  * nadie individualmente.
  */

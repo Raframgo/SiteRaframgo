@@ -11,10 +11,10 @@ sesión compartida real entre aplicaciones (decisión explícita, ver
 - El portal corporativo (este proyecto) **no tiene autenticación de
   visitantes** y nunca la tendrá — no es un producto, es el sitio de
   presentación de la marca (ver spec, sección 3). El único uso de Firebase
-  Auth aquí es `/admin`, con el mismo rol `admins/{uid}` que ya usa aMerkar.
-- aMerkar tiene su propio inicio de sesión (correo/contraseña y Google),
+  Auth aquí es `/admin`, con el mismo rol `admins/{uid}` que ya usa Mercaue.
+- Mercaue tiene su propio inicio de sesión (correo/contraseña y Google),
   independiente del portal.
-- Portal y aMerkar **ya comparten el mismo proyecto Firebase**
+- Portal y Mercaue **ya comparten el mismo proyecto Firebase**
   (`amerkar-45d55`), incluida la misma configuración pública de Firebase
   Auth. Esto es lo que hace que un futuro SSO sea más barato de construir:
   la identidad ya vive en un solo lugar, solo falta el mecanismo para
@@ -47,11 +47,11 @@ ya es así hoy — no cambia.
 ### Traspaso de sesión entre dominios (a construir)
 
 Los tokens de sesión de Firebase Auth no se comparten automáticamente entre
-dominios distintos (aMerkar y un futuro Producto 2 corren en orígenes
+dominios distintos (Mercaue y un futuro Producto 2 corren en orígenes
 diferentes). El mecanismo propuesto:
 
 1. La persona inicia sesión normalmente en el Producto A (por ejemplo,
-   aMerkar).
+   Mercaue).
 2. Cuando decide entrar al Producto B desde un enlace del portal o desde
    dentro del Producto A, el cliente pide su ID token actual (
    `getIdToken()`) y lo envía a una Cloud Function `mintCrossAppToken`.
@@ -73,7 +73,7 @@ existan las dos condiciones de la sección anterior.
 El portal **no participa en el traspaso de sesión** — no tiene sesión de
 visitante que trasladar. Su único rol en un futuro SSO sería, como mucho,
 ofrecer un punto de entrada único ("Entrar a RaframGo" en vez de "Entrar a
-aMerkar" / "Entrar a Producto 2") que redirija al flujo de arriba, pero la
+Mercaue" / "Entrar a Producto 2") que redirija al flujo de arriba, pero la
 autenticación real siempre ocurre entre los productos, nunca en el portal.
 
 ## Qué NO hacer mientras tanto

@@ -34,7 +34,7 @@ export default function AdminLoginPage() {
       <p className="text-sm font-semibold uppercase tracking-widest text-brand">RaframGo</p>
       <h1 className="mt-2 text-2xl font-bold text-slate-900">Acceso administrador</h1>
       <p className="mt-1 text-sm text-muted">
-        Usa la misma cuenta de administrador de aMerkar (mismo proyecto Firebase).
+        Usa la misma cuenta de administrador de Mercaue (mismo proyecto Firebase).
       </p>
 
       <form onSubmit={handleSubmit} className="mt-8 space-y-4">

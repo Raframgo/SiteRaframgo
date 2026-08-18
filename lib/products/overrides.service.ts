@@ -5,7 +5,7 @@ import type { ProductStatus } from "./types";
 /**
  * portalProducts/{id}: los únicos campos de un producto que un admin puede
  * cambiar sin tocar código (estado, orden, URL de la app) — ver
- * firestore.rules (isValidPortalProduct) en el repo de aMerkar. El nombre,
+ * firestore.rules (isValidPortalProduct) en el repo de Mercaue. El nombre,
  * descripción, funcionalidades, etc. siguen viviendo en lib/products/data.ts
  * y en las traducciones: son contenido versionado, no configuración.
  */

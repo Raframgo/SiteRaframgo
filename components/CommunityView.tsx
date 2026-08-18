@@ -22,7 +22,7 @@ function countryName(code: string, language: string): string {
 
 /**
  * Página pública de comunidad (ver spec, secciones 11-13). Lee en vivo, sin
- * sesión, las estadísticas agregadas y las reseñas aprobadas de aMerkar
+ * sesión, las estadísticas agregadas y las reseñas aprobadas de Mercaue
  * (hoy el único producto), más la presencia agregada por país
  * (communityCountryStats, ver lib/community/service.ts). Los nombres de
  * país se resuelven con Intl.DisplayNames en el idioma activo del portal,

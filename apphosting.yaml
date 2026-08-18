@@ -16,7 +16,7 @@ runConfig:
   memoryMiB: 512
 
 # Variables NEXT_PUBLIC_* — no son secretas (son identificadores públicos
-# del proyecto Firebase de aMerkar, la seguridad real está en
+# del proyecto Firebase de Mercaue, la seguridad real está en
 # firestore.rules; ver comentario en lib/firebase.ts y .env.local).
 # availability: BUILD también, porque Next.js las inyecta en el bundle del
 # cliente en tiempo de build, no solo en runtime.
@@ -63,7 +63,7 @@ env:
       - BUILD
       - RUNTIME
 
-  # TODO: reemplazar por la URL real de producción de aMerkar antes de
+  # TODO: reemplazar por la URL real de producción de Mercaue antes de
   # lanzar — hoy sigue apuntando a localhost (placeholder de desarrollo).
   - variable: NEXT_PUBLIC_AMERKAR_APP_URL
     value: http://localhost:3000

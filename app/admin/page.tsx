@@ -66,13 +66,13 @@ function AdminDashboard() {
         </Link>
 
         <div className="rounded-2xl border border-slate-200 bg-white p-6">
-          <p className="text-sm text-muted">Usuarios totales (aMerkar)</p>
+          <p className="text-sm text-muted">Usuarios totales (Mercaue)</p>
           <p className="mt-2 text-3xl font-bold text-slate-900">{stats?.totalUsers ?? "—"}</p>
         </div>
       </div>
 
       <p className="mt-8 text-xs text-muted">
-        Las estadísticas y reseñas se administran desde /admin/resenas en el proyecto aMerkar, no aquí. Este panel
+        Las estadísticas y reseñas se administran desde /admin/resenas en el proyecto Mercaue, no aquí. Este panel
         gestiona únicamente contenido propio del portal: productos, mensajes de contacto.
       </p>
     </div>

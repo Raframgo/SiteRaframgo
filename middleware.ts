@@ -2,7 +2,7 @@ import { NextResponse, type NextRequest } from "next/server";
 
 /**
  * Content-Security-Policy con nonce por solicitud (mismo patrón que
- * aMerkar). El portal no tiene autenticación ni formularios que escriban en
+ * Mercaue). El portal no tiene autenticación ni formularios que escriban en
  * Firestore: solo lee, sin sesión, las colecciones públicas de comunidad y
  * reseñas — por eso connect-src solo necesita habilitar Firestore/Google
  * APIs de lectura, sin dominios de Auth.

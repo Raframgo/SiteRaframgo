@@ -31,8 +31,8 @@ function mapReview(data: Record<string, unknown>): PublicReview {
 
 /**
  * Lectura pública, sin sesión, de las estadísticas y reseñas agregadas de
- * aMerkar (colecciones communityStats/summary y publicReviews, ver
- * firebase/firestore.rules del repo de aMerkar — ambas tienen
+ * Mercaue (colecciones communityStats/summary y publicReviews, ver
+ * firebase/firestore.rules del repo de Mercaue — ambas tienen
  * "allow read: if true"). Pensado para Server Components: son gets
  * puntuales, no suscripciones en tiempo real (el portal no necesita
  * actualizarse en vivo mientras alguien lo tiene abierto).
@@ -44,7 +44,7 @@ export async function getCommunityStats(): Promise<CommunityStats | null> {
   } catch {
     // Sin conexión, Firebase no configurado en este entorno, o el
     // documento todavía no fue inicializado desde /admin/resenas en
-    // aMerkar: el portal debe seguir mostrando algo razonable, nunca caer.
+    // Mercaue: el portal debe seguir mostrando algo razonable, nunca caer.
     return null;
   }
 }
@@ -63,7 +63,7 @@ export async function getApprovedReviews(max = 12): Promise<PublicReview[]> {
  * Presencia por país (communityCountryStats/{código ISO-2}, ver
  * lib/community/types.ts). Ordenado de mayor a menor cantidad de usuarios;
  * lista vacía si todavía no hay datos (registros previos a este cambio en
- * aMerkar) o si Firebase no responde.
+ * Mercaue) o si Firebase no responde.
  */
 export async function getCountryStats(): Promise<CountryStat[]> {
   try {
