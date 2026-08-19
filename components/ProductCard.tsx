@@ -8,7 +8,7 @@ import ProductStatusBadge from "./ProductStatusBadge";
 
 /**
  * Tarjeta reutilizable de producto (ver spec, sección 7-8): la misma
- * tarjeta sirve para Mercaue y para cualquier producto futuro, sin lógica
+ * tarjeta sirve para Mercue y para cualquier producto futuro, sin lógica
  * especial por producto.
  */
 export default function ProductCard({ product }: { product: Product }) {

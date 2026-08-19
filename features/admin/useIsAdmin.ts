@@ -4,7 +4,7 @@ import { useEffect, useState } from "react";
 import { doc, getDoc } from "firebase/firestore";
 import { getFirebaseFirestore } from "@/lib/firebase";
 
-/** null = todavía verificando, true/false = resuelto. Mismo admins/{uid} que Mercaue (ver firestore.rules en el repo de Mercaue). */
+/** null = todavía verificando, true/false = resuelto. Mismo admins/{uid} que Mercue (ver firestore.rules en el repo de Mercue). */
 export function useIsAdmin(userId: string | undefined) {
   const [isAdmin, setIsAdmin] = useState<boolean | null>(null);
 

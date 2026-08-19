@@ -1,5 +1,5 @@
 /**
- * i18n del portal RaframGo: más simple que el de Mercaue (no hay moneda,
+ * i18n del portal RaframGo: más simple que el de Mercue (no hay moneda,
  * fecha ni unidades que formatear — solo textos), pero mismo principio: el
  * idioma se detecta del navegador, se puede guardar una preferencia
  * explícita, y ningún componente conoce el idioma activo directamente

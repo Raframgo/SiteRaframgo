@@ -21,7 +21,7 @@ function mapSubmission(id: string, data: Record<string, unknown>): ContactSubmis
 /**
  * Backend real (sin servidor propio) del formulario de contacto: los
  * mensajes quedan guardados en contactSubmissions (ver firestore.rules en
- * el repo de Mercaue) y un admin los revisa desde /admin/mensajes. No hay
+ * el repo de Mercue) y un admin los revisa desde /admin/mensajes. No hay
  * envío automático de correo (no hay Cloud Functions en este proyecto): el
  * mailto directo sigue disponible como alternativa inmediata en /contacto.
  */

@@ -1,7 +1,7 @@
 /**
  * Modelo de producto del ecosistema RaframGo (ver spec, sección 8 —
  * "Arquitectura multiproducto"). Cualquier página o componente que liste o
- * muestre productos debe leer de aquí, nunca codificar a Mercaue como caso
+ * muestre productos debe leer de aquí, nunca codificar a Mercue como caso
  * especial: así agregar "Producto 2" en el futuro es solo agregar una
  * entrada en lib/products/data.ts (+ sus claves de traducción), sin tocar
  * componentes ni rutas.

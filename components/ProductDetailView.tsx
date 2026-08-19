@@ -9,7 +9,7 @@ import ProductStatusBadge from "./ProductStatusBadge";
 
 /**
  * Contenido de la página individual de un producto (ver spec, sección 9).
- * Genérico: no tiene ninguna referencia especial a Mercaue, así que sirve
+ * Genérico: no tiene ninguna referencia especial a Mercue, así que sirve
  * igual para cualquier producto futuro con la misma estructura de datos.
  */
 export default function ProductDetailView({ product: staticProduct }: { product: ProductType }) {

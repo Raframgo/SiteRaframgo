@@ -9,7 +9,7 @@ import { getFirebaseAuth } from "@/lib/firebase";
 /**
  * Autenticación exclusiva de /admin (el resto del portal no tiene sesión,
  * ver spec sección 3). Reutiliza el mismo proyecto Firebase Auth de
- * Mercaue: cualquier cuenta ya creada ahí puede intentar entrar aquí, pero
+ * Mercue: cualquier cuenta ya creada ahí puede intentar entrar aquí, pero
  * solo importa si además tiene un documento en admins/{uid} (ver
  * features/admin/useIsAdmin.ts y firestore.rules) — el login por sí solo no
  * da ningún permiso.

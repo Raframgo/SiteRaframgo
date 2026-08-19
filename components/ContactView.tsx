@@ -11,7 +11,7 @@ type Status = "idle" | "submitting" | "success" | "error";
 /**
  * Formulario de contacto con backend propio (contactSubmissions en
  * Firestore, ver lib/contact/service.ts y firestore.rules del repo de
- * Mercaue): no hay envío automático de correo porque no hay Cloud Functions
+ * Mercue): no hay envío automático de correo porque no hay Cloud Functions
  * en este proyecto, así que el mailto directo se mantiene como alternativa
  * inmediata debajo del formulario.
  */
