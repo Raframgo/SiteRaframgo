@@ -1,6 +1,5 @@
 "use client";
 
-import Image from "next/image";
 import Link from "next/link";
 import { useT } from "@/features/i18n/I18nProvider";
 import type { Product } from "@/lib/products/types";
@@ -19,14 +18,10 @@ export default function ProductCard({ product }: { product: Product }) {
     <div className="flex flex-col rounded-3xl border border-slate-200 bg-white p-6 shadow-sm transition hover:shadow-md">
       <div className="flex items-start justify-between gap-3">
         {product.logo ? (
-          <Image
-            src={product.logo}
-            alt={name}
-            width={480}
-            height={151}
-            sizes="220px"
-            style={{ height: "3.5rem", width: "auto" }}
-          />
+          // <img> nativo, no next/image: el logo de Suwara es SVG y
+          // next/image bloquea SVGs por defecto (dangerouslyAllowSVG),
+          // así funciona igual para PNG y SVG sin tocar next.config.ts.
+          <img src={product.logo} alt={name} style={{ height: "3.5rem", width: "auto" }} />
         ) : (
           <span className="flex h-14 w-14 items-center justify-center rounded-2xl text-3xl" style={{ backgroundColor: `${product.accentColor}1a` }} aria-hidden>
             {product.icon}

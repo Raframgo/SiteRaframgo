@@ -63,10 +63,8 @@ env:
       - BUILD
       - RUNTIME
 
-  # TODO: reemplazar por la URL real de producción de Mercue antes de
-  # lanzar — hoy sigue apuntando a localhost (placeholder de desarrollo).
   - variable: NEXT_PUBLIC_AMERKAR_APP_URL
-    value: http://localhost:3000
+    value: https://mercue.vercel.app
     availability:
       - BUILD
       - RUNTIME

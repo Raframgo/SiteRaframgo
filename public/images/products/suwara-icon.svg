@@ -1,0 +1,39 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" width="200" height="200" role="img" aria-label="Suwara">
+  <!-- Recreación fiel del isotipo "Amanecer circular" de Suwara
+       (lib/shared/widgets/suwara_logo.dart): anillo + arco de sol con
+       rayos + disco central + dos olas cruzadas, monolínea, color único. -->
+  <defs>
+    <clipPath id="suwara-ring-clip">
+      <circle cx="100" cy="100" r="88.5" />
+    </clipPath>
+  </defs>
+
+  <!-- Anillo exterior -->
+  <circle cx="100" cy="100" r="92" fill="none" stroke="#EE9B52" stroke-width="7" />
+
+  <!-- Arco del sol (semicírculo superior) -->
+  <path d="M 49.4 116.56 A 50.6 50.6 0 0 1 150.6 116.56" fill="none" stroke="#EE9B52" stroke-width="7" stroke-linecap="round" />
+
+  <!-- Rayos en abanico (10, de 180° a 360°) -->
+  <g stroke="#EE9B52" stroke-width="4.2" stroke-linecap="round">
+    <line x1="150.6" y1="116.56" x2="168.31" y2="116.56" transform="rotate(180 100 116.56)" />
+    <line x1="150.6" y1="116.56" x2="168.31" y2="116.56" transform="rotate(200 100 116.56)" />
+    <line x1="150.6" y1="116.56" x2="168.31" y2="116.56" transform="rotate(220 100 116.56)" />
+    <line x1="150.6" y1="116.56" x2="168.31" y2="116.56" transform="rotate(240 100 116.56)" />
+    <line x1="150.6" y1="116.56" x2="168.31" y2="116.56" transform="rotate(260 100 116.56)" />
+    <line x1="150.6" y1="116.56" x2="168.31" y2="116.56" transform="rotate(280 100 116.56)" />
+    <line x1="150.6" y1="116.56" x2="168.31" y2="116.56" transform="rotate(300 100 116.56)" />
+    <line x1="150.6" y1="116.56" x2="168.31" y2="116.56" transform="rotate(320 100 116.56)" />
+    <line x1="150.6" y1="116.56" x2="168.31" y2="116.56" transform="rotate(340 100 116.56)" />
+    <line x1="150.6" y1="116.56" x2="168.31" y2="116.56" transform="rotate(360 100 116.56)" />
+  </g>
+
+  <!-- Disco central -->
+  <circle cx="100" cy="116.56" r="11.13" fill="#EE9B52" />
+
+  <!-- Dos olas cruzadas, recortadas al interior del anillo -->
+  <g clip-path="url(#suwara-ring-clip)" fill="none" stroke="#EE9B52" stroke-width="7" stroke-linecap="round">
+    <path d="M 8 138.64 Q 81.6 106.44 113.8 138.64 Q 146 166.24 192 129.44" />
+    <path d="M 8 159.8 Q 95.4 127.6 132.2 159.8 Q 164.4 187.4 192 150.6" />
+  </g>
+</svg>

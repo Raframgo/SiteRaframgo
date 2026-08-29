@@ -1,9 +1,9 @@
 import type { Product } from "./types";
 
 /**
- * Catálogo de productos de RaframGo. Hoy solo existe Mercue; agregar un
- * producto futuro es agregar otra entrada aquí (+ sus claves de traducción
- * en locales/<idioma>/common.json bajo products.{id}.*) — ver types.ts.
+ * Catálogo de productos de RaframGo. Agregar un producto futuro es agregar
+ * otra entrada aquí (+ sus claves de traducción en
+ * locales/<idioma>/common.json bajo products.{id}.*) — ver types.ts.
  */
 export const PRODUCTS: Product[] = [
   {
@@ -24,11 +24,65 @@ export const PRODUCTS: Product[] = [
     screenshots: [],
     category: "hogar",
     status: "disponible",
-    applicationUrl: process.env.NEXT_PUBLIC_AMERKAR_APP_URL ?? "https://mercue.app",
+    applicationUrl: process.env.NEXT_PUBLIC_AMERKAR_APP_URL ?? "https://mercue.vercel.app",
     // Teal principal de la paleta v3 vigente de Mercue (--brand-600 en
     // apps/web/app/globals.css), reemplaza el verde de una guía anterior.
     accentColor: "#0097A7",
     displayOrder: 1,
+  },
+  {
+    id: "suwara",
+    slug: "suwara",
+    // Ya implementado en suwara_app (Flutter), verificado con `flutter
+    // analyze` — ver E:\Proyectos\Suwara\suwara_app\README.md. Corre hoy
+    // sobre datos en memoria (sin backend real todavía).
+    features: ["profiles", "sleepCalculator", "napAssistant"],
+    // Siguientes pasos documentados en docs/00_MASTER.md del repo de
+    // Suwara: nada de esto tiene código todavía.
+    roadmapFeatures: ["alarm", "diary", "learning"],
+    benefits: ["cycleBased", "wholeFamily", "gentleWake"],
+    faqs: ["whoIsItFor", "whenAvailable"],
+    icon: "🌙",
+    // Recreación fiel (SVG) del isotipo "Amanecer circular" dibujado en
+    // código en lib/shared/widgets/suwara_logo.dart — el propio repo marca
+    // ese dibujo como placeholder hasta que diseño entregue el SVG
+    // definitivo; actualizar esta ruta cuando eso exista.
+    logo: "/images/products/suwara-icon.svg",
+    screenshots: [],
+    category: "bienestar",
+    status: "proximamente",
+    applicationUrl: "",
+    // Naranja Amanecer (--sunriseOrange en app_colors.dart), único acento
+    // de marca de Suwara.
+    accentColor: "#EE9B52",
+    displayOrder: 2,
+  },
+  {
+    id: "secretgo",
+    slug: "secretgo",
+    // Flujo completo O1-O5/P1-P6 ya implementado (crear/organizar juego,
+    // invitar, sortear, wishlist, revelación) — ver README de
+    // E:\Proyectos\amigo-secreto. Corre hoy solo en local (`pnpm dev`),
+    // sin desplegar todavía.
+    features: ["gameSetup", "invites", "draw", "wishlist", "hint", "reveal"],
+    // Fase 1+ del producto, documentada pero sin pantallas construidas
+    // todavía (ver README, sección "Todo el flujo... tiene implementación
+    // real").
+    roadmapFeatures: ["chat", "challenges", "customThemes"],
+    benefits: ["noChatChaos", "fairDraw", "ownWishlist", "budgetAware"],
+    faqs: ["needsAccount", "privacy", "budget"],
+    icon: "🎁",
+    // Wordmark real de Secret-Go, recortado del sheet de marca en
+    // E:\Proyectos\amigo-secreto\public\images\secretgo-wordmark.png.
+    logo: "/images/products/secretgo-wordmark.png",
+    screenshots: [],
+    category: "social",
+    status: "proximamente",
+    applicationUrl: "",
+    // --brand-600 de Secret-Go (src/app/globals.css en el repo de
+    // amigo-secreto).
+    accentColor: "#C71C54",
+    displayOrder: 3,
   },
 ];
 
