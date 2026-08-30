@@ -72,16 +72,20 @@ export const PRODUCTS: Product[] = [
     benefits: ["noChatChaos", "fairDraw", "ownWishlist", "budgetAware"],
     faqs: ["needsAccount", "privacy", "budget"],
     icon: "🎁",
-    // Wordmark real de Secret-Go, recortado del sheet de marca en
-    // E:\Proyectos\amigo-secreto\public\images\secretgo-wordmark.png.
+    // Wordmark real de Secret-Go, recortado del moodboard de marca
+    // oficial vigente (tercer moodboard, concepto "caja de regalo") en
+    // E:\Proyectos\Imagenes\SecretGo\logo\secretgo_logo_color.png
+    // (mismo archivo que usa amigo-secreto/public/images/secretgo-wordmark.png).
+    // Reemplaza el wordmark del moodboard anterior (insignia circular).
     logo: "/images/products/secretgo-wordmark.png",
     screenshots: [],
     category: "social",
     status: "proximamente",
     applicationUrl: "",
-    // --brand-600 de Secret-Go (src/app/globals.css en el repo de
-    // amigo-secreto).
-    accentColor: "#C71C54",
+    // Rojo carmesí muestreado del degradado de la textura de puntos
+    // oficial (violeta -> rojo), a pedido del usuario, en vez del
+    // fucsia/rosa plano anterior (#FF2DBE).
+    accentColor: "#F70035",
     displayOrder: 3,
   },
 ];
