@@ -80,8 +80,8 @@ export const PRODUCTS: Product[] = [
     logo: "/images/products/secretgo-wordmark.png",
     screenshots: [],
     category: "social",
-    status: "proximamente",
-    applicationUrl: "",
+    status: "disponible",
+    applicationUrl: "https://secretgo.vercel.app",
     // Rojo carmesí muestreado del degradado de la textura de puntos
     // oficial (violeta -> rojo), a pedido del usuario, en vez del
     // fucsia/rosa plano anterior (#FF2DBE).
